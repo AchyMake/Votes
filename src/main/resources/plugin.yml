@@ -1,0 +1,30 @@
+name: Votes
+version: '${project.version}'
+main: org.achymake.votes.Votes
+api-version: '1.21'
+prefix: '${project.name}'
+load: STARTUP
+depend:
+  - Votifier
+author: AchyMake
+description: '${project.description}'
+commands:
+  votes:
+    description: check top voters or reload
+    permission: votes.command.votes
+  vote:
+    description: check vote url
+    permission: votes.command.vote
+permissions:
+  votes.command.votes:
+    description: votes command
+    default: op
+  votes.command.votes.top:
+    description: top voters
+    default: op
+  votes.command.votes.reload:
+    description: reload config
+    default: op
+  votes.command.vote:
+    description: vote command
+    default: op

@@ -1,0 +1,33 @@
+notify-update: true
+vote:
+  - "&6Vote:"
+  -  "- https://store.your-server.org/vote"
+broadcast:
+  enable: true
+  message: "%player%&6 has voted on&f %service%&6 and got few items!"
+reward:
+  commands:
+    - eco add %player% 25
+  items:
+    diamond:
+      type: DIAMOND
+      name: Diamond
+      amount: 1
+      lore:
+        - '&9from'
+        - '&7-&6 Vote'
+      enchantments:
+        unbreaking:
+          type: UNBREAKING
+          amount: 1
+    emerald:
+      type: EMERALD
+      name: Emerald
+      amount: 3
+      lore:
+        - '&9from'
+        - '&7-&6 Vote'
+      enchantments:
+        unbreaking:
+          type: UNBREAKING
+          amount: 1

@@ -39,7 +39,7 @@ public class VotesCommand implements CommandExecutor, TabCompleter {
                             OfflinePlayer offlinePlayer = test.getKey();
                             int voted = test.getValue();
                             int placed = i + 1;
-                            getMessage().send(player, "&6" + placed + "&f " + offlinePlayer.getName() + "&a " + voted);
+                            getMessage().send(player, "&6" + placed + "&f " + offlinePlayer.getName() + "&a " + getDatabase().format(voted));
                         }
                         return true;
                     }
@@ -62,7 +62,7 @@ public class VotesCommand implements CommandExecutor, TabCompleter {
                         OfflinePlayer offlinePlayer = test.getKey();
                         int voted = test.getValue();
                         int placed = i + 1;
-                        getMessage().send(consoleCommandSender, "&6" + placed + "&f " + offlinePlayer.getName() + "&a " + voted);
+                        getMessage().send(consoleCommandSender, "&6" + placed + "&f " + offlinePlayer.getName() + "&a " + getDatabase().format(voted));
                     }
                     return true;
                 }

@@ -47,8 +47,11 @@ public class Database {
     public int getVoted(OfflinePlayer offlinePlayer) {
         return config.getInt(getUUID(offlinePlayer));
     }
+    public String format(int value) {
+        return new DecimalFormat("#,##0").format(value);
+    }
     public String getVotedFormatted(OfflinePlayer offlinePlayer) {
-        return new DecimalFormat("#,##0").format(config.getInt(getUUID(offlinePlayer)));
+        return format(config.getInt(getUUID(offlinePlayer)));
     }
     public void reload() {
         if (file.exists()) {

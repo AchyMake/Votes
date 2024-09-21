@@ -27,7 +27,7 @@ public class VotesCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player player) {
             if (args.length == 0) {
-                getMessage().send(player, "&6You have voted&f " + getDatabase().getVoted(player) + "&6 times");
+                getMessage().send(player, "&6You have voted&f " + getDatabase().getVotedFormatted(player) + "&6 times");
                 return true;
             } else if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("top")) {

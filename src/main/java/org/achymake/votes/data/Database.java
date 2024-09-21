@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.logging.Level;
 
@@ -45,6 +46,9 @@ public class Database {
     }
     public int getVoted(OfflinePlayer offlinePlayer) {
         return config.getInt(getUUID(offlinePlayer));
+    }
+    public String getVotedFormatted(OfflinePlayer offlinePlayer) {
+        return new DecimalFormat("#,##0").format(config.getInt(getUUID(offlinePlayer)));
     }
     public void reload() {
         if (file.exists()) {
